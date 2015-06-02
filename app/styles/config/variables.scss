@@ -1,0 +1,97 @@
+$color-page-background: #eee;
+
+
+@function typeColor($color) {
+	$typeColor: #fff;
+	
+	@if lightness($color) > 50% {
+		$typeColor: darken($color,50%);	
+	}
+
+	@return $typeColor;
+}
+
+@function borderColor($color) {
+	$borderColor: #000;
+
+	@return $borderColor;
+}
+
+%pointer {
+    cursor: pointer;
+}
+
+%important-text {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: .5px;
+}
+
+// Transitions
+
+@mixin transition($args:200ms) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    -ms-transition: $args;
+    transition: $args;
+}
+@mixin transition-delay($delay:0) {
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    -ms-transition-delay: $delay;
+    transition-delay: $delay;
+}
+@mixin transition-duration($duration:200ms) {
+    -webkit-transition-duration: $duration;
+    -moz-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    -ms-transition-duration: $duration;
+    transition-duration: $duration;
+}
+@mixin transition-property($property:all) {
+    -webkit-transition-property: $property;
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+    -ms-transition-property: $property;
+    transition-property: $property;
+}
+@mixin transition-timing-function($function:ease) {
+    -webkit-transition-timing-function: $function;
+    -moz-transition-timing-function: $function;
+    -o-transition-timing-function: $function;
+    -ms-transition-timing-function: $function;
+    transition-timing-function: $function;
+}
+@mixin transform($args) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+// Z-levels
+%z-depth-0 {
+  box-shadow: none !important;
+}
+%z-depth-1{
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+%z-depth-1-half{
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+%z-depth-2{
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+%z-depth-3{
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+%z-depth-4{
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+%z-depth-5{
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+

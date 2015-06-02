@@ -1,5 +1,5 @@
 {
-  "name": "pbrego-github-io",
+  "name": "gulp-yo",
   "private": true,
   "dependencies": {
     "chai": "~1.8.0",

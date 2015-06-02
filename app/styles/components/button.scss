@@ -1,0 +1,68 @@
+$button-visual-height: 48px;
+
+$button-font-family: arial;
+$button-font-size: 24px;
+$button-font-weight: bold;
+$button-line-height: round($button-font-size * 1.2);
+
+$button-border-width: 0px;
+$button-border-radius: 4px;
+$button-border-style: solid;
+
+$button-padding: round((($button-visual-height - $button-line-height) / 2) - $button-border-width);
+$button-padding-ratio: 1;
+$button-padding-top: $button-padding;
+$button-padding-bottom: $button-padding;
+$button-padding-left: round($button-padding * $button-padding-ratio);
+$button-padding-right: round($button-padding * $button-padding-ratio);
+
+$button-background-color: #999;
+$button__search-background-color: #229;
+$button__cancel-background-color: #922;
+
+@mixin colorize-botton ($color) {
+    background-color: $color;
+    border-color: borderColor($color);
+    color: typeColor($color);
+};
+
+.button {
+	@extend %important-text;
+	@extend %pointer;
+	@extend %z-depth-1;
+	@include colorize-botton($button-background-color);
+	@include transition(.2s ease-out);
+    display: inline-block;
+    vertical-align: middle;
+
+	// Gets rid of tap active state
+	-webkit-tap-highlight-color: transparent;
+    
+    border-width: $button-border-width;
+    border-radius: $button-border-radius;
+    border-style: $button-border-style;
+    font-family: $button-font-family;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    line-height: $button-line-height;
+    padding: $button-padding-top 
+    	     $button-padding-right 
+    		 $button-padding-bottom 
+    		 $button-padding-left;
+
+	// @extend .waves-effect;
+	
+  	&:hover {
+	    @extend %z-depth-1-half;
+    }
+}
+
+@mixin generate-button($name, $background-color) {
+    .button__#{$name} {
+        @extend .button;
+		@include colorize-botton($background-color);
+    }
+}
+
+@include generate-button('search', $button__search-background-color);
+@include generate-button('cancel', $button__cancel-background-color);

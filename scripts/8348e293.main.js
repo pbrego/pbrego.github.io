@@ -1,1 +1,0 @@
-"use strict";$("#drawer-toggle").click(function(){$(".main-container").toggleClass("drawer-shrinked")}),$("#aside-toggle").click(function(){$(".main-container").toggleClass("aside-shrinked")});
