@@ -7,9 +7,9 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
-                './',
-                './assets/css/main.css',
-                './offline.html'
+                // './',
+                // './assets/css/main.css',
+                // './offline.html'
             ]).then(function() {
                 self.skipWaiting();
             });
